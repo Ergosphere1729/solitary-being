@@ -23,3 +23,23 @@
   const box = document.getElementById("fade-box");
   box.classList.add("fade-in");
 </script>
+ <canvas id="myCanvas" width="500" height="200"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  let x = 0;
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(x, 100, 10, 0, Math.PI * 2);
+    ctx.fill();
+
+    x += 1;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
